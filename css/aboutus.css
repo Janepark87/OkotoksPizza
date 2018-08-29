@@ -1,0 +1,149 @@
+#aboutus .aboutTitle {
+  text-shadow: 3px 4px 1px rgba(0, 0, 0, 0.3); }
+
+#aboutus .aboutus-photo .subTitle {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5); }
+
+#aboutus {
+  padding: 1.2rem;
+  text-align: center;
+  background: #fff; }
+  #aboutus .about-video {
+    padding: 0.5rem 0; }
+    #aboutus .about-video video {
+      width: 95%; }
+  #aboutus .aboutTitle {
+    padding: 1rem 0;
+    color: #da291c;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 700; }
+  #aboutus .aboutus-photo {
+    display: none;
+    font-style: italic;
+    font-weight: 600; }
+  #aboutus .aboutDes {
+    padding-bottom: 0.5rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    text-align: justify;
+    text-indent: 1rem; }
+    #aboutus .aboutDes::first-letter {
+      font-size: 125%; }
+  #aboutus .aboutSubtext {
+    padding: 0.8rem 0;
+    color: #4f4f4f;
+    font-size: 1rem;
+    font-weight: 600; }
+  #aboutus .aboutPhone {
+    margin-top: 1.8rem;
+    font-size: 1.2rem;
+    transform: scale(1);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    #aboutus .aboutPhone:hover {
+      transform: scale(1.1); }
+  #aboutus .aboutHour {
+    line-height: 1.8;
+    padding-bottom: 1.5rem;
+    font-size: 1.2rem; }
+  #aboutus .aboutAddress {
+    background: #3a485b;
+    -webkit-box-shadow: 0.1rem 0.1rem 0rem rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0.1rem 0.1rem 0rem rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0.1rem 0.1rem 0rem rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0.1rem 0.1rem 0rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0.1rem 0.1rem 0rem rgba(0, 0, 0, 0.2); }
+    #aboutus .aboutAddress a {
+      color: #fff;
+      letter-spacing: 0.085rem;
+      font-weight: normal;
+      font-style: italic; }
+      #aboutus .aboutAddress a:hover {
+        color: #ffbf00; }
+  #aboutus .photoTitle {
+    display: inline-block;
+    margin: 1.8rem 0;
+    padding: 0.5rem 0;
+    color: #1c232c;
+    border-bottom: 1px solid #d9dadc;
+    font-size: 1.5rem;
+    font-weight: 600; }
+  #aboutus .photolist li img {
+    width: 100%;
+    padding: 0.3rem 0; }
+
+@media screen and (min-width: 700px) {
+  #aboutus {
+    margin-top: -1rem;
+    padding: 1.2rem 0; }
+    #aboutus .aboutDes {
+      padding: 0.5rem 1.5rem;
+      line-height: 2; }
+    #aboutus .aboutSubtext {
+      padding: 1rem 0;
+      font-size: 1.25rem;
+      font-weight: 600; }
+    #aboutus .photolist {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; }
+      #aboutus .photolist li {
+        flex: 49%;
+        max-width: 48.5%;
+        padding: 0 0.3rem; }
+        #aboutus .photolist li img {
+          vertical-align: middle; } }
+
+@media screen and (min-width: 1024px) {
+  body {
+    background: none; }
+  #aboutus {
+    width: 1000px;
+    margin: 0 auto; }
+    #aboutus .about-video {
+      float: right;
+      margin-top: 1.5rem; }
+      #aboutus .about-video video {
+        width: 90%;
+        -webkit-box-shadow: 0rem 0.3rem 1rem rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0rem 0.3rem 1rem rgba(0, 0, 0, 0.3);
+        -o-box-shadow: 0rem 0.3rem 1rem rgba(0, 0, 0, 0.3);
+        -ms-box-shadow: 0rem 0.3rem 1rem rgba(0, 0, 0, 0.3);
+        box-shadow: 0rem 0.3rem 1rem rgba(0, 0, 0, 0.3); }
+    #aboutus .aboutTitle {
+      padding: 0; }
+    #aboutus .aboutDes {
+      font-size: 1.3rem;
+      letter-spacing: -0.02rem; }
+    #aboutus .aboutus-photo {
+      display: block;
+      position: relative;
+      float: left;
+      width: 54%;
+      margin: 2rem 1.5rem 1rem 1rem; }
+      #aboutus .aboutus-photo img {
+        width: 100%;
+        -webkit-box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
+        -o-box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
+        -ms-box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3); }
+      #aboutus .aboutus-photo p {
+        display: block;
+        position: absolute;
+        top: 17.7rem;
+        left: 0;
+        color: #fff;
+        font-size: 3.4rem; }
+    #aboutus .photolist {
+      margin: 1.5rem 0; }
+      #aboutus .photolist li {
+        max-width: 24%; } }

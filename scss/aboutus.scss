@@ -1,0 +1,176 @@
+@import 'variables';
+
+#aboutus {
+    padding: 1.2rem;
+    text-align: center;
+    background: $white;
+    .about-video {
+        padding: 0.5rem 0;
+        & video {
+            width: 95%;
+        }
+    }
+    .aboutTitle {
+        padding: 1rem 0;
+        @extend %text-shadowSubtitle;
+        color: $red;
+        text-transform: uppercase;
+        font: {
+            size: 3rem;
+            weight: 700;
+        }
+    }
+    .aboutus-photo {
+        display: none;
+        font: {
+            style: italic;
+            weight: 600;
+        }
+        & .subTitle {
+            @extend %text-shadowCaption;
+        }
+    }
+    .aboutDes {
+        padding-bottom: 0.5rem;
+        font-size: 1.2rem;
+        line-height: 1.4;
+        text-align: justify;
+        text-indent: 1rem;
+            &::first-letter { //only first letter size will be changed
+                font-size: 125%;
+        }
+    }
+    .aboutSubtext {
+        padding: 0.8rem 0;
+        color: $grey-dark;
+        font: {
+            size: 1rem;
+            weight: 600;
+        }
+    }
+    .aboutPhone {
+        margin-top: 1.8rem;
+        font-size: 1.2rem;
+        transform: scale(1);
+        @include transition(all);
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    .aboutHour {
+        line-height: 1.8;
+        padding-bottom: 1.5rem;
+        font-size: 1.2rem;
+    }
+    .aboutAddress {
+        background: lighten($black-light, 15%);
+        @include box-shadow(0.1rem, 0.1rem, 0rem, $rgba4);
+        & a {
+            color: $white;
+            letter-spacing: 0.085rem;
+            font: {
+                weight: normal;
+                style: italic;
+            }
+            &:hover {
+                color: $yellow-hover;
+            }
+        }
+    }
+    .photoTitle {
+        display: inline-block;
+        margin: 1.8rem 0;
+        padding: 0.5rem 0;
+        color: $black-light;
+        border-bottom: 1px solid $white-dark;
+        font: {
+            size: 1.5rem;
+            weight: 600;
+        }
+    }
+    .photolist li img {
+        width: 100%;
+        padding: 0.3rem 0;
+    }
+}
+
+// ***************************************************** start @media
+@media screen and (min-width: 700px) {
+    #aboutus {
+        margin-top: $margin;
+        padding: 1.2rem 0;
+        .aboutDes {
+            padding: 0.5rem 1.5rem;
+            line-height: 2;
+        }
+        .aboutSubtext {
+            padding: 1rem 0;
+            font: {
+                size: 1.25rem;
+                weight: 600;
+            }
+        }
+        .photolist {
+            @include flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            & li {
+                flex: 49%;
+                max-width: 48.5%;
+                padding: 0 0.3rem;
+                & img {
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1024px) {
+    body {
+        background: none;
+    }
+    #aboutus {
+        width: 1000px;
+        margin: 0 auto; // align center
+        .about-video {
+            float: right;
+            margin-top: 1.5rem;
+            & video {
+                width: 90%;
+                @include box-shadow(0rem,0.3rem,1rem, $rgba5);
+            }
+        }
+        .aboutTitle {
+            padding: 0;
+        }
+        .aboutDes {
+            font-size: 1.3rem;
+            letter-spacing: -0.02rem;
+        }
+        .aboutus-photo {
+            display: block;
+            position: relative;
+            float: left;
+            width:  54%;
+            margin: 2rem 1.5rem 1rem 1rem;
+            & img {
+                width: 100%;
+                @include box-shadow(0,0.3rem,1rem, $rgba5);
+            }
+            & p {
+                display: block;
+                position: absolute;
+                top: 17.7rem;
+                left: 0;
+                color: $white;
+                font-size: 3.4rem;
+            }
+        }
+        .photolist {
+            margin: 1.5rem 0;
+            & li {
+                max-width: 24%;
+            }
+        }
+    }
+}

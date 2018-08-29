@@ -1,0 +1,267 @@
+@import 'variables';
+
+#menu {
+    padding: 0;
+    margin: 0;
+    .menuWrapper {
+        @include flex;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+        background: $white;
+        opacity: 0.8;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        box-sizing: border-box;
+
+        & > span, div {
+            display: inline-block;
+        }
+        .menuebutton {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            padding: 0.35rem 0.5rem;
+            border: 0;
+            background: $color-none;
+            text-align: right;
+            @include  box-shadow(1px, 1px, 0, $rgbaB);
+        }
+        .menuboxOne {
+            flex: 1;
+            font-weight: 600;
+        }
+        .menuboxTwo {
+            flex: 2;
+            position: relative;
+            padding: 0.4rem 0.5rem;
+            background: lighten($grey-dark, 50%);
+        }
+        .menuName {
+            padding: 0 0.8rem;
+            font-weight: 600;
+            @extend %text-shadow2;
+        }
+    }
+    #menulist-nav {
+        position: absolute;
+        top: 5.5rem;
+        right: 0.46rem;
+        width: 65.86%;
+        height: 0;
+        overflow: hidden;
+        background: $color-none;
+        @include transition(all);
+        &.open { // javaScript
+            height: auto;
+        }
+        .menuLinks {
+            margin-bottom: 0.3rem;
+            background: $white-light;
+            @include box-shadow(7px, 1px, 5px, $rgba4);
+            & li:nth-child(-n+5) { //select only the first five!
+                border-bottom: 1px solid $line-light;
+                & a {
+                    display: block;
+                    padding: 0.8rem 0;
+                    color: $grey-dark;
+                    text-align: center;
+                    font-size: 0.8rem;
+                    @include transition(all);
+                    &:hover {
+                        background: $line-light;
+                    }
+                }
+                & a.selected { // indicate the current page
+                    position: relative;
+                    background: $red;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    //******************************************** Section: menu content
+    .menuContainer {
+        padding: 1rem 0.5rem 1.5rem 0.5rem;
+        background: $white;
+        & > ul { //menuSubinfor was float: right
+            clear: both;
+        }
+    }
+    hr {
+        border: 0.5px solid $white-light;
+        margin: 0.5rem 0 1rem 0;
+    }
+    .menuSubname {
+        display: inline-block;
+        font: {
+            size: 0.9rem;
+            weight: 600;
+        }
+        color: $red;
+    }
+    .menuSubinfo {
+        float: right; //clear to ul
+        padding: 0.2rem 0.3rem 0 0;
+        font-size: 0.6rem;
+        color: $grey-dark;
+    }
+    .menuBigwrapper {
+        padding-top: 0.5rem;
+        & li {
+            width: 100%;
+            padding: 0.5rem 0;
+        }
+    }
+    .pizzaImage {
+        @include flex;
+        align-items: center;
+        padding: 0 0.5rem;
+    }
+    .pizzaImagebox {
+        width: 50%;
+        img {
+            width: 70%;
+        }
+    }
+    .pizzaInfowrapper {
+        width: 55%;
+        text-align: center;
+        & p {
+            margin-top: 0.3rem;
+        }
+        .pizzaTitle {
+            font: {
+                size: 0.8rem;
+                weight: 600;
+            }
+        }
+        .pizzaDes {
+            font-style: italic;
+            font-size: 0.8rem;
+        }
+        .pizzaPrice {
+            padding: 0.3rem 0;
+            font: {
+                size: 0.8rem;
+                weight: 700;
+            }
+            color: $red-light;
+            background: lighten($white-light, 2%);
+            @include rounded(1rem);
+            @include box-shadow(0.1rem, 0.1rem, 0rem, $rgba4);
+        }
+    }
+}
+// ***************************************************** start @media
+@media screen and (min-width: 700px) {
+    #menu {
+        margin-top: $margin;
+        #menulist-nav {
+            top: 6.85rem;
+            right: 0.46rem;
+            width: 66.05%;
+            z-index: 7;
+        }
+        .menuContainer {
+            padding: 2rem 1.5rem;
+            min-height: 47rem;
+        }
+        hr {
+            margin: 1.5rem 0;
+        }
+        .menuSubname {
+            font-size: 1rem;
+        }
+        .menuSubinfo {
+            padding-top: 0.5rem;
+            font-size: 0.8rem;
+        }
+        .menuBigwrapper {
+            @include flex;
+            flex-wrap: wrap;
+            align-items: center;
+            & li {
+                padding: 0.5rem;
+                width: 46.99%;
+                line-height: 1.5rem;
+                text-align: center;
+                @include transition(all);
+                transform: scale(1); //menu itmes - scale
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1000px) {
+    #menu {
+        .menuebutton,
+        span.menuboxOne,
+        div.menuboxTwo {
+            display: none;
+        }
+        #menulist-nav {
+            position: relative;
+            top: -1rem;
+            right: 0;
+            width: 100%;
+            height: auto;
+
+            .menuLinks {
+                @include flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 2.5rem;
+                margin-bottom: 0;
+                padding: 0.5rem 1.5rem;
+                background: $white;
+                & li:nth-child(-n+5) { //only selected first five
+                    border-bottom: 0;
+                    border-right: 1px solid $line-dark;
+                    width: 200px;
+                    padding: 0 0.3rem;
+                    > a {
+                        font: {
+                            size: 0.85rem;
+                            weight: 600;
+                        }
+                    }
+                    &:last-child { // remove the only last line
+                        border-right: 0px solid $line-light;
+                    }
+                    .selected::after {  // put the symbol after content
+                        content: '▼';
+                        display: block;
+                        position: absolute;
+                        bottom: -9px;
+                        left: 50%;
+                        color: $red;
+                    }
+                }
+            }
+        }
+        .pizzaInfowrapper {
+            .pizzaTitle {
+                font-size: 1rem;
+            }
+        }
+    }
+    .menuContainer {
+        margin-top: $margin;
+        border-top: 1px solid $white-dark;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #menu {
+        .menuBigwrapper {
+            & li {
+                width: 32%;
+            }
+        }
+    }
+}

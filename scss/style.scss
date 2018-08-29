@@ -1,0 +1,321 @@
+@import 'reset';
+@import 'variables';
+
+body {
+    background: $red url(../image/headerbg.jpg) no-repeat 48% 7%;
+}
+// ***************************************************** start Header
+header {
+    @include flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    color: $white;
+    background:$rgbaC;
+    @include box-shadow(0, 2px, 2px, $rgba5);
+
+    .logo {
+        align-self: center;
+        text-align: center;
+        padding: 0.3rem;
+        flex: 1;
+        img {
+            width: 3rem;
+        }
+    }
+
+    #hamburger-nav {
+        position: absolute;
+        top: 3.15rem;
+        left: 0;
+        overflow: hidden;
+        height: 0;
+        width: 100%;
+        z-index: 2;
+        background: $color-none;
+        @include transition(all);
+        &.open {
+            height: auto;
+        }
+
+        .headerLinks {
+            margin-bottom: 1rem;
+            background: $red;
+            @include box-shadow(0, 0, 1rem, $rgbaB);
+            li a {
+                display: block;
+                text-align: center;
+                padding: 0.8rem 0;
+                color: $white;
+                font-size: 1rem;
+                @include transition(all);
+                &:hover {
+                    background: lighten($red, 4%);
+                }
+            }
+        }
+    }
+    .headerPhone,
+    .headerNavbar {
+        padding: 0.2rem;
+        font-size: 1.5rem;
+        text-align: center;
+        align-self: center;
+        background: none;
+        border: none;
+        color: $white;
+    }
+    .headerPhone {
+        flex: 7;
+        @extend %text-shadow;
+        &:hover {
+            color: $yellow-hover;
+        }
+    }
+    .headerNavbar {
+        flex: 1;
+        & i {
+            @extend %text-shadow;;
+        }
+    }
+}
+// ***************************************************** Start homeMain
+#homeMain {
+    padding: 8.57rem 0;
+    color: $white;
+    text-align: center;
+    font-family: $font-title;
+    > a {
+        color: $white;
+        &:hover {
+            color:$yellow-hover;
+        }
+    }
+    .homeTitle {
+        font-family: $font-title;
+        font-size: 2.5rem;
+        letter-spacing: 0.2rem;
+        @extend %text-shadowTitle;
+    }
+    .homeSubtitle {
+        font-family: $font-title;
+        font-size: 1.8rem;
+        letter-spacing: 0.15rem;
+        @extend %text-shadowSubtitle;
+    }
+    .scale { // chain together .homePhone & .homeMap
+        @extend %text-shadow;
+        @include transition(all);
+        transform: scale(0.9);
+        &:hover {
+            transform: scale(1);
+            color: $yellow-hover;
+        }
+    }
+    .homePhone {
+        @extend .scale;
+        margin-top: 4rem;
+        font-size: 1.7rem;
+    }
+    .homeMap {
+        @extend .scale;
+        margin-top: 1.7rem;
+        font-size: 1.5rem;
+    }
+}
+
+// ***************************************************** start Footer
+footer {
+    position: relative;
+    padding: 1rem 0;
+    text-align: center;
+    color: $white;
+    background: $red;
+
+    .footerTitle {
+        font-size: 1rem;
+    }
+    .footerSeb {
+        font-size: 0.8rem;
+        padding-bottom: 0.5rem;
+    }
+    .footerSocialbox {
+        padding: 0.2rem 0;
+        & li {
+            display: inline-block;
+            > a {
+                margin: 0.3rem 0.3rem;
+                padding: 0 0.5rem;
+                color: $white;
+                font-size: 1.5rem;
+                transform: scale(1);
+                @include transition(all);
+                &:hover {
+                    transform: scale(1.2);
+                    color: $white;
+                }
+            }
+        }
+    }
+    .footerPhone {
+        padding: 0.8rem 0;
+        font-size: 1.1rem;
+        color: $white;
+        &:hover {
+            color: $yellow-hover;
+        }
+    }
+    .copyRight {
+        font-size: 0.7rem;
+    }
+    .scrollup {
+        position: absolute;
+        left: 50%;
+        top: -1rem;
+        width: 3rem;
+        height: 1.5rem;
+        text-align: center;
+        font-size: 1.2rem;
+        color: $white;
+        background: $red;
+        @include top-half-round(3rem); //how to make half reound-value=width,but half height !!
+        border-bottom: 0;
+        margin-left: -1.5rem;
+        transform: scale(0.9);
+        @include transition(all);
+        &:hover {
+            transform: scale(1);
+            color: $yellow-hover;
+        }
+    }
+}
+
+// ***************************************************** start @media
+@media screen and (min-height: 668px) {  //only for homepage
+    .footerFixed {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    body {
+        background-size: cover;
+        background-position: 0 0;
+    }
+    header {
+        flex-wrap: nowrap;
+        background: none;
+        box-shadow: none;
+        .logo {
+            position: absolute;
+            top: 0rem;
+            left: 3rem;
+            padding: 0.7rem 0.5rem;
+            background: $white;
+            @include box-shadow(0, 0, 1rem, $rgbaB);
+            z-index: 3;
+            & img {
+                width: 4rem;
+            }
+        }
+        .headerPhone {
+            display: none;
+        }
+        .headerNavbar {
+            display: none;
+            & i {
+                display: none;
+            }
+        }
+        #hamburger-nav {
+            position: relative;
+            display: block;
+            height: auto;
+            top: 0;
+            .headerLinks {
+                @include flex;
+                justify-content: flex-end;
+                padding: 0;
+                padding-right: 1rem;
+                & li a{
+                    padding: 1.8rem 1.5rem;
+                }
+            }
+        }
+    }
+    #homeMain {
+        padding: 10rem 0;
+
+        .homeTitle {
+            font-size: 5rem;
+        }
+        .homeSubtitle {
+            margin-top: 0.8rem;
+            font-size: 3rem;
+        }
+        .homePhone {
+            font-size: 2rem;
+        }
+        .homeMap {
+            font-size: 1.8rem;
+        }
+    }
+    footer {
+        position: relative;
+        min-height: 1.5rem;
+        color: $white-dark;
+        background: $black-light;
+        .footerTitle {
+            display: none;
+        }
+        .footerSeb {
+            display: none;
+        }
+        .footerPhone {
+            display: none;
+        }
+        .footerSocialbox {
+            float: right;
+            padding-right: 1.5rem;
+            & li {
+                > a {
+                    font-size: 1.3rem;
+                    margin: 0;
+                }
+            }
+        }
+        .scrollup {
+            top: -1.3rem;
+            width: 4rem;
+            height: 2.5rem;
+            margin-left: -2rem;
+            @include top-half-round(5rem);
+            font-size: 1.5rem;
+            color: $white-dark;
+            background: $black-light;
+            & i {
+                display: block;
+            }
+        }
+        .copyRight {
+            float: left;
+            padding: 0.4rem 0 0 1.5rem;
+            font-size: 0.8rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #homeMain {
+        .homeTitle {
+            font-size: 7rem;
+        }
+        .homeSubtitle {
+            font-size: 4rem;
+        }
+    }
+}

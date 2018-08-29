@@ -1,0 +1,117 @@
+@import 'variables';
+
+#location {
+    padding: 1.2rem 0;
+    text-align: center;
+    background: $white;
+
+    .locationTitle {
+        padding: 0.5rem 0 2rem 0;
+        @extend %text-shadowSubtitle;
+        color: $red;
+        text-transform: uppercase;
+        font: {
+            size: 3rem;
+            weight: 700;
+        }
+    }
+    .location-contact {
+        a {
+            color: $grey-dark;
+        }
+        .contact {
+            marging-top: 0.2rem;
+        }
+        .location-Phone,
+        .location-email {
+            transform: scale(0.9);
+            @include transition(all);
+            &:hover {
+                transform: scale(1);
+            }
+        }
+    }
+    .text {
+        color: $grey-dark;
+        line-height: 1.8;
+        font: {
+            size: 1.1rem;
+            weight: 600;
+        }
+    }
+    .sub-title {
+        display: inline-block;
+        padding-bottom: 0.1rem;
+        margin-bottom: 0.7rem;
+        color: $black-light;
+        border-bottom: 1px solid $line-dark;
+    }
+    .location-socialbox li {
+        padding: 1rem 0;
+        display: inline-block;
+        > a {
+            margin: 0.3rem 0;
+            padding: 0 0.5rem;
+            color: $black-light;
+            font-size: 2.2rem;
+            transform: scale(0.9);
+            @include transition(all);
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+    .location-address {
+        padding: 1rem;
+        background: lighten($black-light, 10%);
+        @include box-shadow(0.1rem, 0.1rem, 0rem, $rgba4);
+        color: $white;
+        letter-spacing: 0.085rem;
+        font: {
+            weight: normal;
+            style: italic;
+        }
+        &:hover {
+            color: $yellow-hover;
+        }
+    }
+}
+
+// ***************************************************** start @media
+@media screen and (min-width: 700px) {
+    body {
+        background: none;
+    }
+    #location {
+        .location-contact {
+            float: right;
+            width: 45%;
+        }
+        .location-hour {
+            float: left;
+            width: 55%;
+            vertical-align: top;
+            padding-bottom: 4rem;
+        }
+        .location-socialbox {
+            float: right;
+            width: 45%;
+        }
+        .location-address {
+            clear: both;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #location {
+        .sub-hours {
+            display: inline-block;
+            text-align: right;
+            padding-right: 3rem;
+        }
+        .location-wrapper {
+            @include flex;
+        }
+    }
+}
