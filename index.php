@@ -30,7 +30,7 @@
 -->
 	<!-- Header Start -->
 	<header>
-		<a id="alwaysTop" class="logo" href="index.html">
+		<a id="alwaysTop" class="logo" href="index.php">
 			<img src="image/okotoks-pizza-logo.png" alt="Okotoks Pizza">
 		</a>
 		<a class="headerPhone" href="tel:4032228282">(403) 222 - 8282</a>
@@ -41,7 +41,7 @@
 		<nav id="hamburger-nav">
 			<ul class="headerLinks">
 				<li>
-					<a href="index.html">Home</a>
+					<a href="index.php">Home</a>
 				</li>
 				<li>
 					<a href="aboutus.html">About us</a>
