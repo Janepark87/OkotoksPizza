@@ -23,11 +23,16 @@
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Seaweed+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="image/favicon.ico" />
+	<link rel="icon" type="image/png" sizes="144x144"  href="image/android-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="image/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="image/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="image/apple-icon-114x114.png">
+
 </head>
 <body>
-<!--  how to use icon!!
-	<i class="fa fa-caret-up"></i> normal<br>
--->
 	<!-- Header Start -->
 	<header>
 		<a id="alwaysTop" class="logo" href="index.php">
